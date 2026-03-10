@@ -58,7 +58,7 @@ Library-Management-System
 The system starts with a login page.
 
 Default credentials:
-Username: admin\n
+Username: admin
 Password: 1234
 
 
