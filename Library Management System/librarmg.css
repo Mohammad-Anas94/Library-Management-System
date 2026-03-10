@@ -1,0 +1,273 @@
+/* GOOGLE FONT */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* BACKGROUND */
+
+body {
+
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    color: #333;
+
+}
+
+
+/* HEADER */
+
+header {
+
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+
+/* LOGIN */
+
+.center {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 120px;
+
+}
+
+.center input {
+
+    width: 260px;
+    padding: 12px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.center button {
+
+    padding: 10px 25px;
+    background: #5a67d8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.center button:hover {
+
+    background: #434190;
+
+}
+
+
+/* DASHBOARD BUTTONS */
+
+.btnnn,
+.btnnnn {
+
+    display: inline-block;
+    margin: 25px;
+
+}
+
+.btnnn button,
+.btnnnn button {
+
+    width: 200px;
+    height: 140px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 12px;
+
+    background: white;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+.btnnn button:hover,
+.btnnnn button:hover {
+
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+
+}
+
+
+.btnnn img,
+.btnnnn img {
+
+    width: 50px;
+    margin-bottom: 10px;
+
+}
+
+.btnnn span,
+.btnnnn span {
+
+    font-weight: 500;
+    font-size: 16px;
+
+}
+
+
+/* PAGES */
+
+.page {
+
+    display: none;
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+.page input {
+
+    width: 260px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+
+}
+
+.page button {
+
+    padding: 10px 20px;
+    border: none;
+    background: #5a67d8;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s;
+
+}
+
+.page button:hover {
+
+    background: #434190;
+
+}
+
+
+/* TABLE */
+
+table {
+
+    margin: auto;
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 70%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+}
+
+th {
+
+    background: #5a67d8;
+    color: white;
+    padding: 12px;
+    font-weight: 500;
+
+}
+
+td {
+
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+
+}
+
+tr:hover {
+
+    background: #f5f6ff;
+
+}
+
+
+/* STATUS COLORS */
+
+.available {
+
+    color: green;
+    font-weight: 600;
+
+}
+
+.issued {
+
+    color: red;
+    font-weight: 600;
+
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:768px) {
+
+    table {
+
+        width: 95%;
+
+    }
+
+    .btnnn button,
+    .btnnnn button {
+
+        width: 160px;
+        height: 120px;
+
+    }
+
+}
+
+body {
+    background: url(1768063598485\(1\).jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+
+}
+
+/* issued book row */
+.issued-row {
+    background-color: #ffcccc;
+}
+
+/* optional hover */
+.issued-row:hover {
+    background-color: #ffb3b3;
+}
