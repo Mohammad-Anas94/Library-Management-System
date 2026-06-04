@@ -1,4 +1,4 @@
-let books=[]
+let books = JSON.parse(localStorage.getItem("books")) || []
 
 function login(){
 
@@ -43,6 +43,7 @@ status:"Available"
 }
 
 books.push(book)
+localStorage.setItem("books", JSON.stringify(books))
 
 alert("Book Added")
 
@@ -54,37 +55,56 @@ function loadBooks(){
 let table=document.getElementById("bookTable")
 
 table.innerHTML=""
-
 books.forEach(b=>{
-
-let rowClass = b.status === "Issued" ? "issued-row" : ""
 
 table.innerHTML+=`
 
-<tr class="${rowClass}">
+<tr class="${b.status === "Issued" ? "issued-row" : ""}">
+
 <td>${b.id}</td>
 <td>${b.title}</td>
 <td>${b.author}</td>
-<td>${b.status}</td>
+
+<td>
+${b.status}
+${b.rollNo ? `<br>Roll: ${b.rollNo}` : ""}
+</td>
+
 <td>${b.location}</td>
+
+<td>${b.dueDate || "-"}</td>
+
 </tr>
 
 `
-
 })
-
 }
 
 
 function issueBook(){
 
 let id=document.getElementById("bookId").value
+let roll=document.getElementById("rollNo").value
+let due=document.getElementById("dueDate").value
+
+if(!roll || !due){
+alert("Enter Roll No and Due Date")
+return
+}
 
 books.forEach(b=>{
 if(b.id==id){
+
 b.status="Issued"
+b.rollNo=roll
+b.dueDate=due   // STORE DUE DATE
+
 }
 })
+
+localStorage.setItem("books", JSON.stringify(books))
+
+loadBooks()
 
 }
 
@@ -92,14 +112,55 @@ b.status="Issued"
 function returnBook(){
 
 let id=document.getElementById("bookId").value
+let roll=document.getElementById("rollNo").value
+
+let today = new Date()
 
 books.forEach(b=>{
+
 if(b.id==id){
-b.status="Available"
+
+if(b.rollNo !== roll){
+alert("Wrong Roll Number ❌")
+return
 }
-})
+
+if(b.status==="Issued"){
+
+let due = new Date(b.dueDate)
+
+let fine = 0
+
+if(today > due){
+
+let diff = Math.ceil((today - due)/(1000*60*60*24))
+fine = diff * 5   // ₹5 per day
+
+alert("Late Return! Fine = ₹" + fine)
+
+}else{
+
+alert("Returned on time ✅")
 
 }
+
+b.status="Available"
+b.rollNo=""
+b.dueDate=""
+
+}
+
+}
+
+})
+
+localStorage.setItem("books", JSON.stringify(books))
+
+loadBooks()
+
+}
+
+
 
 
 async function fetchBook(){
@@ -144,7 +205,7 @@ status:"Available"
 }
 
 books.push(book)
-
+localStorage.setItem("books", JSON.stringify(books))
 alert("Scanned book added")
 
 }
