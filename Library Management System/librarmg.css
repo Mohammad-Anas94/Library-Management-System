@@ -79,7 +79,7 @@ header {
 
 /* DASHBOARD BUTTONS */
 
-.btnnn,
+
 .btnnnn {
 
     display: inline-block;
@@ -87,7 +87,7 @@ header {
 
 }
 
-.btnnn button,
+
 .btnnnn button {
 
     width: 200px;
@@ -111,7 +111,7 @@ header {
 
 }
 
-.btnnn button:hover,
+
 .btnnnn button:hover {
 
     transform: translateY(-5px);
@@ -120,7 +120,7 @@ header {
 }
 
 
-.btnnn img,
+
 .btnnnn img {
 
     width: 50px;
@@ -128,7 +128,6 @@ header {
 
 }
 
-.btnnn span,
 .btnnnn span {
 
     font-weight: 500;
