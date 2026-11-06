@@ -117,13 +117,6 @@ Then the user can add the book to the library with a shelf location.
 
 ---
 
-## 📸 Screenshots
-
-### Library Interface
-(Add your screenshot here)
-
----
-
 ## 🎯 Future Improvements
 
 - Student login system
